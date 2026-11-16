@@ -10,7 +10,7 @@ jobs:
     # Enable auto-merge on PRs explicitly marked by maintainers
     if: >-
       contains(join(fromJson(toJson(github.event.pull_request.labels)).*.name, ','), 'maintainer-ready')
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - name: Enable auto-merge (squash)
         uses: peter-evans/enable-pull-request-automerge@v3
